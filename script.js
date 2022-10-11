@@ -1,18 +1,21 @@
-listDigimon = document.getElementById("list-digimon")
+let listMovie = document.getElementById("list")
 
-let getDataDigimon = async () => {
-    let URL = "https://digimon-api.vercel.app/api/digimon"
+let getDataMovie = async () => {
+    let URL = "https://api.themoviedb.org/3/movie/popular?api_key=d41688cb0f0ee69b62145a634b120198&language=en-US"
     let response = await fetch(URL)
-    let digimons = await response.json()
-  
-    // menampilkan 10 data digimon
-    digimons.slice(0, 10).forEach((item, index) => {
-         listDigimon.innerHTML += 
-      `<div>
-        <img src="${item.img}" alt="" width="200">
-        <h3>${item.name}</h3>
-      </div>`
+    let movies = await response.json()
+    console.log(movies.results);
+
+    movies.results.forEach((item, index) => {
+        let IMG = 'https://image.tmdb.org/t/p/w500'
+        listMovie.innerHTML += 
+        `<div class="h-64 w-64 p-10 rounded-lg mt-8 border border-gray-200">
+        <img src="${IMG+item.poster_path}" class="rounded-lg" width="150" alt="">
+        <h1 class="mt-2 font-semibold">${item.title}</h1>
+        <h1 class="mt-2">Realese : ${item.release_date}</h1>
+        <h1 class="mt-2">Rating : ${item.vote_average}</h1>
+        </div>`
     })
   }
   
-  getDataDigimon()
+  getDataMovie()
