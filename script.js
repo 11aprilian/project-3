@@ -9,7 +9,7 @@ let getDataMovie = async () => {
     movies.results.forEach((item, index) => {
         let IMG = 'https://image.tmdb.org/t/p/w500'
         listMovie.innerHTML += 
-        `<div class="h-64 w-64 p-10 rounded-lg mt-8 border border-gray-200">
+        `<div class="h-64 w-64 ml-4 p-10 rounded-lg mt-8 border border-gray-200">
         <img src="${IMG+item.poster_path}" class="rounded-lg" width="150" alt="">
         <h1 class="mt-2 font-semibold">${item.title}</h1>
         <h1 class="mt-2">Realese : ${item.release_date}</h1>
