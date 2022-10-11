@@ -7,7 +7,11 @@ let getDataDigimon = async () => {
   
     // menampilkan 10 data digimon
     digimons.slice(0, 10).forEach((item, index) => {
-        console.log(digimons);
+         listDigimon.innerHTML += 
+      `<div>
+        <img src="${item.img}" alt="" width="200">
+        <h3>${item.name}</h3>
+      </div>`
     })
   }
   
