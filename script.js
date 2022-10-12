@@ -1,6 +1,5 @@
 let container = document.querySelector(".container");
 let inputSearch = document.getElementById("search");
-let button = document.getElementById("submit");
 let form = document.getElementById("form");
 let desc = document.querySelector(".desc");
 
