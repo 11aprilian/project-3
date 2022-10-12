@@ -1,4 +1,5 @@
 let listMovie = document.getElementById("list")
+let inputSearch = document.getElementById("search")
 
 let getDataMovie = async () => {
     let URL = "https://api.themoviedb.org/3/movie/popular?api_key=d41688cb0f0ee69b62145a634b120198&language=en-US"
