@@ -5,15 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TPA 3</title>
-    <script src="script.js" defer></script>
     <link href="output.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Header Start -->
-    <header>
-      <div class="flex justify-between bg-gray-200 py-4 shadow-lg">
+    <header class="top-0 w-full">
+      <div class="flex justify-between bg-gray-900 py-4 shadow-lg w-full">
         <div class="ml-4">
-          <h1 class="font-semibold p-3 text-xl text-gray-700">
+          <h1 class="font-semibold p-3 text-xl text-white">
             <a href="index.html">AprilianMovies</a>
           </h1>
         </div>
@@ -29,7 +28,7 @@
             <button
               id="submit"
               type="submit"
-              class="block border p-2 text-sm mt-1 mr-4 rounded-lg bg-blue-600 text-white font-semibold"
+              class="block p-2 text-sm mt-1 mr-4 rounded-lg bg-blue-600 text-white font-semibold"
             >
               Search
             </button>
@@ -45,7 +44,9 @@
     </div>
     <!-- Content Start -->
     <div id="list" class="flex justify-between flex-wrap mt-8 mx-8"></div>
-    <div id="list-search" class="flex justify-between flex-wrap mt-8 mx-8"></div>
+    <div id="list-search" class="container flex justify-between flex-wrap mt-8 mx-8"></div>
     <!-- Content End -->
+
+    <script src="script.js" defer></script>
   </body>
 </html>
