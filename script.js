@@ -1,8 +1,11 @@
 let listMovie = document.getElementById("list")
 let inputSearch = document.getElementById("search")
+let button = document.getElementById("submit")
+let body = document.getElementsByTagName("body")
+let form = document.getElementById("form");
+let API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=d41688cb0f0ee69b62145a634b120198&language=en-US"
 
-let getDataMovie = async () => {
-    let URL = "https://api.themoviedb.org/3/movie/popular?api_key=d41688cb0f0ee69b62145a634b120198&language=en-US"
+let getDataMovie = async (URL) => {
     let response = await fetch(URL)
     let movies = await response.json()
     console.log(movies.results);
@@ -18,5 +21,19 @@ let getDataMovie = async () => {
         </div>`
     })
   }
-  
-  getDataMovie()
+  getDataMovie(API_URL)
+
+  form.addEventListener('submit', (e) => {
+    let SEARCH_URL = 'https://api.themoviedb.org/3/search/movie?api_key=d41688cb0f0ee69b62145a634b120198&query='
+    let searchValue = inputSearch.value
+    e.preventDefault()
+
+    if(searchValue && searchValue !==''){
+        getDataMovie(SEARCH_URL+searchValue+'&page=1')
+        searchValue = ''
+    }else{
+        window.location.reload()
+    }
+    
+  })
+
